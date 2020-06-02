@@ -23,7 +23,7 @@ extension YMD {
         return days
     }
     
-    public var dayOfWeak: DayOfWeek {
+    public var dayOfWeek: DayOfWeek {
         let days = YMD(2019, 12, 8)!.distance(to: self)
         var dayIndex = days % 7
         if dayIndex < 0 { dayIndex += 7}

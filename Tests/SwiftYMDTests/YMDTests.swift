@@ -3,8 +3,8 @@ import SwiftYMD
 
 class YMDTests: XCTestCase {
     func testDayOfWeek() {
-        XCTAssertEqual(YMD(1988, 12, 3)!.dayOfWeak, .saturday)
-        XCTAssertEqual(YMD(2019, 12, 12)!.dayOfWeak, .thursday)
+        XCTAssertEqual(YMD(1988, 12, 3)!.dayOfWeek, .saturday)
+        XCTAssertEqual(YMD(2019, 12, 12)!.dayOfWeek, .thursday)
     }
     
     func testComparable() {
