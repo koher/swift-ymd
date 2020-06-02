@@ -154,6 +154,10 @@ extension YMD {
     public static func -= (lhs: inout YMD, rhs: YMDInterval) {
         lhs = lhs - rhs
     }
+    
+    public static func - (lhs: YMD, rhs: YMD) -> Int {
+        rhs.distance(to: lhs)
+    }
 }
 
 // FIXME: Replace this with tuples when SE-0283 is available.

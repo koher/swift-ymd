@@ -105,4 +105,8 @@ extension YM {
     public static func -= (lhs: inout YM, rhs: YMInterval) {
         lhs = lhs - rhs
     }
+    
+    public static func - (lhs: YM, rhs: YM) -> Int {
+        rhs.distance(to: lhs)
+    }
 }
