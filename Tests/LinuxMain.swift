@@ -1,7 +1,8 @@
 import XCTest
 
-import SwiftDateTests
+import SwiftYMDTests
 
 var tests = [XCTestCaseEntry]()
-tests += SwiftDateTests.allTests()
+tests += SwiftYMDTests.__allTests()
+
 XCTMain(tests)
