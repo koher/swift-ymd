@@ -54,6 +54,24 @@ class YearTests: XCTestCase {
         XCTAssertEqual((2105 as Year).numberOfDays, 365)
     }
     
+    func testCodable() {
+        do { // encoding
+            let year: Year = 1988
+            let data: Data = try JSONEncoder().encode(year)
+            XCTAssertEqual(String(data: data, encoding: .utf8)!, "1988")
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        do { // decoding
+            let data: Data = "1988".data(using: .utf8)!
+            let year: Year = try JSONDecoder().decode(Year.self, from: data)
+            XCTAssertEqual(year, 1988)
+        } catch {
+            XCTFail("\(error)")
+        }
+    }
+    
     func testOperators() {
         XCTAssertEqual((1988 as Year) + (31 as Year), (2019 as Year))
         do {

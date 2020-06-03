@@ -19,6 +19,22 @@ extension Month: Equatable, Comparable, Hashable {
     }
 }
 
+extension Month: Codable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let value = try container.decode(String.self)
+        guard let month = Month.allCases.first(where: { $0.description == value }) else {
+            throw DecodingError.dataCorrupted(DecodingError.Context.init(codingPath: decoder.codingPath, debugDescription: "Illegal value: \(value)"))
+        }
+        self = month
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(description)
+    }
+}
+
 extension Month: ExpressibleByIntegerLiteral {
     public init(integerLiteral value: Int) {
         self.init(rawValue: value)!
