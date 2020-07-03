@@ -1,7 +1,5 @@
 # SwiftYMD
 
-[![Build Status](https://travis-ci.org/koher/swift-ymd.svg?branch=master)](https://travis-ci.org/koher/swift-ymd)
-
 _SwiftYMD_ helps to calculate dates in the forms of `YMD` and `YM`.
 
 ```swift
