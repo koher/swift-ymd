@@ -16,6 +16,14 @@ extension YMD {
         guard let month = Month(rawValue: month) else { return nil }
         self.init(Year(year), month, day)
     }
+    
+    public init?(_ description: String) {
+        let parts = description.split(separator: "-")
+        guard parts.count == 3 else { return nil }
+        let components = parts.compactMap { Int($0) }
+        guard components.count == 3 else { return nil }
+        self.init(components[0], components[1], components[2])
+    }
 }
 
 extension YMD {

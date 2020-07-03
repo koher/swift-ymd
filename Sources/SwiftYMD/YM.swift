@@ -14,6 +14,14 @@ extension YM {
     public init(_ year: Int, _ month: Int) {
         self.init(Year(year), Month(month))
     }
+    
+    public init?(_ description: String) {
+        let parts = description.split(separator: "-")
+        guard parts.count == 2 else { return nil }
+        let components = parts.compactMap { Int($0) }
+        guard components.count == 2 else { return nil }
+        self.init(components[0], components[1])
+    }
 }
 
 extension YM {

@@ -3,7 +3,9 @@ import SwiftYMD
 
 class YMDTests: XCTestCase {
     func testInit() {
-        XCTAssertEqual(YMD(1988 as Int, 12 as Int, 3 as Int), YMD(Year(1988), .december, 3))
+        XCTAssertEqual(YMD(1988 as Int, 12 as Int, 3 as Int)!, YMD(Year(1988), .december, 3)!)
+        XCTAssertEqual(YMD("1988-12-03")!, YMD(1988, 12, 3)!)
+        XCTAssertNil(YMD("2019-13-01"))
         
         XCTAssertNil(YMD(2019, 2, 29))
         XCTAssertEqual(YMD(2020, 2, 29)?.description, "2020-02-29")
