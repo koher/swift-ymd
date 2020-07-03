@@ -12,6 +12,13 @@ public struct YMD {
 }
 
 extension YMD {
+    public init?(_ year: Int, _ month: Int, _ day: Int) {
+        guard let month = Month(rawValue: month) else { return nil }
+        self.init(Year(year), month, day)
+    }
+}
+
+extension YMD {
     public var ym: YM { YM(year, month) }
     
     public var dayOfYear: Int {

@@ -2,6 +2,10 @@ import XCTest
 import SwiftYMD
 
 class MonthTests: XCTestCase {
+    func testInit() {
+        XCTAssertEqual(Month(12 as Int), Month.december)
+    }
+    
     func testCodable() {
         do { // encoding
             let month: Month = .december

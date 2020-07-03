@@ -13,6 +13,15 @@ public enum Month: Int, CaseIterable {
     case december  = 12
 }
 
+extension Month {
+    public init(_ month: Int) {
+        guard let m = Month(rawValue: month) else {
+           preconditionFailure("Illegal month: \(month)")
+        }
+        self = m
+    }
+}
+
 extension Month: Equatable, Comparable, Hashable {
     public static func < (lhs: Month, rhs: Month) -> Bool {
         lhs.rawValue < rhs.rawValue

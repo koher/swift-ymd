@@ -11,6 +11,12 @@ public struct YM {
 }
 
 extension YM {
+    public init(_ year: Int, _ month: Int) {
+        self.init(Year(year), Month(month))
+    }
+}
+
+extension YM {
     public var days: ClosedRange<Int> { 1 ... numberOfDays }
     
     public var ymds: ClosedRange<YMD> { YMD(year, month, 1)! ... YMD(year, month, numberOfDays)! }

@@ -2,6 +2,10 @@ import XCTest
 import SwiftYMD
 
 class YMTests: XCTestCase {
+    func testInit() {
+        XCTAssertEqual(YM(1988 as Int, 12 as Int), YM(Year(1988), .december))
+    }
+    
     func testNumberOfDays() {
         XCTAssertEqual(YM(1988, 1).numberOfDays, 31)
         XCTAssertEqual(YM(1988, 2).numberOfDays, 29)
