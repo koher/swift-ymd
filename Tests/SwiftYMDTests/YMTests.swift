@@ -120,8 +120,15 @@ class YMTests: XCTestCase {
             XCTAssertEqual(ym, YM(1988, 12))
         }
         
+        XCTAssertEqual(YM(1988, 12) + 372, YM(2019, 12))
+        XCTAssertEqual(YM(2019, 12) + -372, YM(1988, 12))
         XCTAssertEqual(YM(2019, 12) - YM(1988, 12), 372)
         XCTAssertEqual(YM(1988, 12) - YM(2019, 12), -372)
+        do {
+            var ym = YM(1988, 12)
+            ym += 372
+            XCTAssertEqual(ym, YM(2019, 12))
+        }
     }
     
     func testRanges() {

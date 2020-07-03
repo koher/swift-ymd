@@ -73,8 +73,15 @@ class YMDTests: XCTestCase {
             XCTAssertEqual(ymd, YMD(1988, 12, 3)!)
         }
         
+        XCTAssertEqual(YMD(1988, 12, 3)! + 11331, YMD(2019, 12, 12)!)
+        XCTAssertEqual(YMD(2019, 12, 12)! + -11331, YMD(1988, 12, 3)!)
         XCTAssertEqual(YMD(2019, 12, 12)! - YMD(1988, 12, 3)!, 11331)
         XCTAssertEqual(YMD(1988, 12, 3)! - YMD(2019, 12, 12)!, -11331)
+        do {
+            var ymd = YMD(1988, 12, 3)!
+            ymd += 11331
+            XCTAssertEqual(ymd, YMD(2019, 12, 12)!)
+        }
 
         // years
         XCTAssertEqual(YMD(1988, 12, 3)! + .years(31), YMD(2019, 12, 3)!)

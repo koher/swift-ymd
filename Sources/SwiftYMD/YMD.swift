@@ -170,8 +170,16 @@ extension YMD {
         lhs = lhs - rhs
     }
     
+    public static func + (lhs: YMD, rhs: Int) -> YMD {
+        lhs + .days(rhs)
+    }
+    
     public static func - (lhs: YMD, rhs: YMD) -> Int {
         rhs.distance(to: lhs)
+    }
+    
+    public static func += (lhs: inout YMD, rhs: Int) {
+        lhs = lhs + rhs
     }
 }
 

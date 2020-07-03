@@ -120,7 +120,15 @@ extension YM {
         lhs = lhs - rhs
     }
     
+    public static func + (lhs: YM, rhs: Int) -> YM {
+        lhs + .months(rhs)
+    }
+    
     public static func - (lhs: YM, rhs: YM) -> Int {
         rhs.distance(to: lhs)
+    }
+    
+    public static func += (lhs: inout YM, rhs: Int) {
+        lhs = lhs + rhs
     }
 }
