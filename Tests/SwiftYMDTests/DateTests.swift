@@ -16,4 +16,9 @@ final class DateTests: XCTestCase {
         XCTAssertEqual(YMD(date, timeZone: TimeZone(abbreviation: "JST")!), YMD(2001, 1, 1)!)
         XCTAssertEqual(YMD(date, timeZone: TimeZone(abbreviation: "PST")!), YMD(2000, 12, 31)!)
     }
+    
+    func testDateInit() {
+        XCTAssertEqual(Date(YM(2001, 1), timeZone: TimeZone(abbreviation: "GMT")!), Date(timeIntervalSinceReferenceDate: 0))
+        XCTAssertEqual(Date(YMD(2001, 1, 1)!, timeZone: TimeZone(abbreviation: "GMT")!), Date(timeIntervalSinceReferenceDate: 0))
+    }
 }

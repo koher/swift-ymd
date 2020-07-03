@@ -39,3 +39,15 @@ extension YMD {
         YMD(Date())
     }
 }
+
+extension Date {
+    public init(_ ym: YM, timeZone: TimeZone = .current) {
+        let dateComponents = DateComponents(calendar: .current, timeZone: timeZone, year: ym.year.rawValue, month: ym.month.rawValue)
+        self = dateComponents.date!
+    }
+    
+    public init(_ ymd: YMD, timeZone: TimeZone = .current) {
+        let dateComponents = DateComponents(calendar: .current, timeZone: timeZone, year: ymd.year.rawValue, month: ymd.month.rawValue, day: ymd.day)
+        self = dateComponents.date!
+    }
+}
