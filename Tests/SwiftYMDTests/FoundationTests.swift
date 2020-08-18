@@ -6,7 +6,7 @@ class FoundationTests: XCTestCase {
     // It rarely fails when the date changes during its execution
     func testCurrent() {
         let date: Date = .init()
-        let calendar: Calendar = .current
+        let calendar: Calendar = .init(identifier: .gregorian)
         
         let ym: YM = .current()
         XCTAssertEqual(ym.year.rawValue, calendar.component(.year, from: date))

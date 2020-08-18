@@ -2,7 +2,7 @@ import Foundation
 
 extension YM {
     public init(_ date: Date, timeZone: TimeZone = .current) {
-        let calendar: Calendar = .current
+        let calendar: Calendar = .init(identifier: .gregorian)
         let components = calendar.dateComponents(in: timeZone, from: date)
         guard
             let y = components.year,
@@ -21,7 +21,7 @@ extension YM {
 
 extension YMD {
     public init(_ date: Date, timeZone: TimeZone = .current) {
-        let calendar: Calendar = .current
+        let calendar: Calendar = .init(identifier: .gregorian)
         let components = calendar.dateComponents(in: timeZone, from: date)
         guard
             let y = components.year,
@@ -42,12 +42,12 @@ extension YMD {
 
 extension Date {
     public init(_ ym: YM, timeZone: TimeZone = .current) {
-        let dateComponents = DateComponents(calendar: .current, timeZone: timeZone, year: ym.year.rawValue, month: ym.month.rawValue)
+        let dateComponents = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: timeZone, year: ym.year.rawValue, month: ym.month.rawValue)
         self = dateComponents.date!
     }
     
     public init(_ ymd: YMD, timeZone: TimeZone = .current) {
-        let dateComponents = DateComponents(calendar: .current, timeZone: timeZone, year: ymd.year.rawValue, month: ymd.month.rawValue, day: ymd.day)
+        let dateComponents = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: timeZone, year: ymd.year.rawValue, month: ymd.month.rawValue, day: ymd.day)
         self = dateComponents.date!
     }
 }
