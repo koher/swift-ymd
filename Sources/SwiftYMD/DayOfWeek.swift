@@ -23,3 +23,5 @@ extension DayOfWeek: CustomStringConvertible {
         }
     }
 }
+
+extension DayOfWeek: Sendable {}

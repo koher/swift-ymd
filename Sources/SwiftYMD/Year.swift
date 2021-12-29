@@ -64,6 +64,8 @@ extension Year: ExpressibleByIntegerLiteral {
     }
 }
 
+extension Year: Sendable {}
+
 extension Year {
     public static func + (lhs: Year, rhs: Year) -> Year {
         .init(rawValue: lhs.rawValue + rhs.rawValue)

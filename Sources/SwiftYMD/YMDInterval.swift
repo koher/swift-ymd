@@ -5,6 +5,8 @@ public enum YMDInterval {
     case weeks(Int)
 }
 
+extension YMDInterval: Sendable {}
+
 extension YMDInterval {
     public static prefix func + (value: YMDInterval) -> YMDInterval {
         value

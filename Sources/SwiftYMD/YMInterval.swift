@@ -3,6 +3,8 @@ public enum YMInterval {
     case months(Int)
 }
 
+extension YMInterval: Sendable {}
+
 extension YMInterval {
     public static prefix func + (value: YMInterval) -> YMInterval {
         value

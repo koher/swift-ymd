@@ -83,6 +83,8 @@ extension YMD: CustomStringConvertible {
     }
 }
 
+extension YMD: Sendable {}
+
 extension YMD {
     public static func + (lhs: YMD, rhs: YMDInterval) -> YMD {
         switch rhs {

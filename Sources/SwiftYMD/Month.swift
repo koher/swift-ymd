@@ -68,3 +68,5 @@ extension Month: CustomStringConvertible {
         }
     }
 }
+
+extension Month: Sendable {}

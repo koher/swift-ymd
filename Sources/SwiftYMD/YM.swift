@@ -89,6 +89,8 @@ extension YM: CustomStringConvertible {
     }
 }
 
+extension YM: Sendable {}
+
 extension YM {
     public static func + (lhs: YM, rhs: YMInterval) -> YM {
         switch rhs {
