@@ -1,0 +1,28 @@
+name: "CGPointVector CI"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  mac-os:
+    name: macOS
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build -c release -v
+    - name: Test
+      run: swift test -c release -v
+  linux:
+    name: Linux
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build -c release -v
+    - name: Test
+      run: swift test -c release -v
+
