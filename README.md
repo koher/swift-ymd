@@ -1,3 +1,4 @@
+![SwiftYMD CI](https://github.com/koher/swift-ymd/actions/workflows/tests.yml/badge.svg)
 # SwiftYMD
 
 _SwiftYMD_ helps to calculate dates in the forms of `YMD` and `YM`.
