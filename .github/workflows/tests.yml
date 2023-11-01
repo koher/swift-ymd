@@ -1,4 +1,4 @@
-name: "CGPointVector CI"
+name: "SwiftYMD CI"
 
 on:
   push:
